@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  feishu-sink:
+    image: vancehub/feishu-sink:v1
+    ports:
+      - "8081:8081"
+    configs:
+      - source: vance_feishu_config
+        target: "/vance/config.json"
+configs:
+  vance_feishu_config:
+    external: true
